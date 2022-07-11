@@ -11,4 +11,6 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     last_updated_at = models.DateTimeField(auto_now_add=True)
 
-    author = models.ForeignKey("customer.Customer", on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(
+        "customer.Customer", on_delete=models.SET_NULL, null=True
+    )
