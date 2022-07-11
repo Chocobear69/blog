@@ -1,12 +1,15 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListCreateAPIView
 
 from post.models import Post
 from post.serializers import PostSerializer
+from customer.permissions import ReadOnlyPermission
+from post.paginators import StandardPaginator
+from post.filters import PostFilters
 
 
-class ListPostView(ListAPIView):
+class ListPostView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-
-    def get(self, request, *args, **kwargs):
-        return super(ListPostView, self).get(request, args, kwargs)
+    permission_classes = [ReadOnlyPermission]
+    pagination_class = StandardPaginator
+    filter = PostFilters

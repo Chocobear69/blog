@@ -18,5 +18,5 @@ from django.urls import path
 from post.views import ListPostView
 
 urlpatterns = [
-    path('', ListPostView.as_view()),
+    path("", ListPostView.as_view()),
 ]

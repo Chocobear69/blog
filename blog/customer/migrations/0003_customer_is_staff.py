@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('customer', '0002_customer_groups_customer_is_superuser_and_more'),
+        ("customer", "0002_customer_groups_customer_is_superuser_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='customer',
-            name='is_staff',
+            model_name="customer",
+            name="is_staff",
             field=models.BooleanField(default=False),
         ),
     ]
